@@ -6,23 +6,20 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:05:43 by throbert          #+#    #+#             */
-/*   Updated: 2025/04/03 08:09:15 by throbert         ###   ########.fr       */
+/*   Updated: 2025/04/04 09:53:44 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
+#include "Contact.hpp"
 
-class phonebook
+class PhoneBook
 {
 public:
-	std::;
+	void	display();
 
 private:
-	std::string phonenumber;
-	std::string	lastname;
-	std::string	nickname;
-	std::string	phonenumber;
-	std::string	darksecret;
+	Contact contacts[8];
+
 }
