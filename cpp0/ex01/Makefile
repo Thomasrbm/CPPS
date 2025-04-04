@@ -5,13 +5,11 @@ CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98
 
 OBJDIR = ../objects
 
-SRCS = main.c \
+SRCS = main.cpp \
 	   PhoneBook.cpp \
-	   PhoneBook.hpp \
 	   Contact.cpp \
-	   Contact.hpp
 
-OBJS = $(patsubst %.c, $(OBJDIR)/%.o, $(SRCS))
+OBJS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRCS))
 
 RM = rm -f
 
@@ -21,7 +19,7 @@ $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 	@echo "Compiled $(NAME) successfully!"
 
-$(OBJDIR)/%.o: %.c
+$(OBJDIR)/%.o: %.cpp
 	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
