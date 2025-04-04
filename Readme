@@ -1,0 +1,13 @@
+
+
+
+
+Les operateurs de surchage (Operator overloading) :
+
+    En c++ on peut redefinir le fonctionnement de signe
+    pour leur donner une utilisation precise dans le cadre de 
+    notre methode.
+    ainsi >> et << devienntent des opereateur de flux pour cout et 
+    cin. 
+
+
