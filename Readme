@@ -11,3 +11,218 @@ Les operateurs de surchage (Operator overloading) :
     cin. 
 
 
+
+
+
+
+
+1/
+
+    PAS DE STL AVANT EX 08.
+
+
+        ce sont des fonction toute faites 
+
+        std::vector → tableau dynamique
+
+        std::list → liste chaînée
+
+        std::map → dictionnaire (clé/valeur)
+
+        std::set, std::stack, etc.
+
+        std::sort() → trie un tableau
+
+        std::find() → cherche une valeur
+
+        std::count(), std::for_each(), etc.
+
+
+
+
+
+
+2/
+
+    using namespace std;  INTERDIT
+
+        se declare au dessus pour eviter de renoter  std::cout << "Hello";
+        a chaque fois on peut :  cout << "Hello";  direct
+
+        mais la ils veulent qu on apprene.
+
+
+    friend :  INTERDIT
+
+    ce sont les classe amis (B) qu on declare dans la classe A elle meme.
+    ces classe ont acces a toute la classe A
+
+    Ici il veukt pas  car c est propre.
+
+    ca faut deux classe au lieu d une bien orga
+
+
+
+
+3/ 
+
+    Forme canonique
+
+
+    class MyClass {
+        public:
+            MyClass();                                // Constructeur
+            // constructeur parametre si fait
+            MyClass(const MyClass &other);            // Constructeur de copie
+            MyClass &operator=(const MyClass &rhs);   // Opérateur d'affectation
+            ~MyClass();                               // Destructeur
+        
+            void doSomething();                       // Méthode publique
+        
+        private:
+            int		_secretValue;                     // Attribut privé
+            char*	_dynamicData;                    // Ressource à gérer
+        };
+
+
+
+        C est 4 fonction fondamental presente dans toutes les classe.
+
+        1. Constructeur
+
+        par defaut il est vide.
+
+        le constructeur.  (le premier appel qui init dans la memoir dynamiquement)
+        Par defaut il est vide Myclasse(), on peut mettre des var dedans
+        pas de type de retour
+
+
+        on peut les laisser par defaut et le compil gere pour cas simple 
+        mais si bcp d alloc new etc, vaut mieux precisier dans une fonction
+        (myclass::myclass()) puis desciriotn
+
+        2. Constructeur par copy 
+
+        Pas de type de retour 
+
+        MyClass(const MyClass &other);  
+        + reference constante
+
+        un genre de strcpy de classe
+
+
+
+
+        3. operateur d affectation MyClass &operator=(const MyClass &rhs)
+
+
+            
+
+        4.  
+            
+            free tout avec delete
+
+
+4 / 
+
+        Template et Header
+        
+
+            Pas de fonctions ecrites directement en entier dans un hpp.
+            prototype max.
+
+            Sauf si template 
+
+            Une template = generique, fonction qui marche avec tout type.
+
+🔹 Exemple : 
+
+template <typename T>
+T add(T a, T b) {
+	return a + b;
+}
+
+Ici, T peut être int, float, double, etc.
+
+Appel : add(2, 3) ou add(1.5, 2.2)
+
+le compil va remplacer par le bon type lui meme
+
+
+
+
+
+
+
+
+
+
+
+=======================================================================
+
+
+
+Notes cpp :
+
+
+
+Classes privees et publique : 
+	
+	pour proteger les codeur d eux meme ou des autres sur les projets de groupe. poour pas qu on modifie a de mauvais endroit les classe
+	car en cpp c est bien plus chiant qu en c pour debug skip.
+	les classe private et public tout est efface lors de la compil, tout devient accessible viag debug, mais pour les humains c est safe
+	pour les gigas projets
+
+	c est une instruction, un dev qui voit private il sait qu il faut pas toucher a ca.
+
+	le compilateur voudras pas te donner les valeurs de chose dans privee.
+	tu devras passer par des "getters" (to get) qui seront en publique et qui returneront les valeur
+	et les "setter" pour changer les var (mais ils sont calibres)
+
+	en gros c est des instruction pour comment use ton objet (une structure plus avancee)
+
+	par defaut tout est private
+
+	permet aussi un code tres modulaire
+
+
+
+
+
+Methodes (fonction liees a la structure) :
+
+	
+	en c  les fonctions sont pour tout le monde, accessible partout via le header.
+	ici les fonction sont liees a leur objet
+
+	( on peut toujours faire les fonction basique de c, global)
+
+
+
+
+
+
+APPEL DE METHODE 
+->
+
+    Nom::methode_name()
+    {
+        
+    }
+
+
+
+Constructeur et destructeur :
+
+	
+
+	Ca malloc free et init tout.
+	c est dynamique
+
+
+    
+
+
+
+
+Overload ( fonction dynamique) :
