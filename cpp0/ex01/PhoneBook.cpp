@@ -6,7 +6,7 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:24:46 by throbert          #+#    #+#             */
-/*   Updated: 2025/04/04 22:06:25 by throbert         ###   ########.fr       */
+/*   Updated: 2025/04/05 10:02:47 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@ void	PhoneBook::display()
 {
 	std::cout << "┌──────────┬──────────┬──────────┬──────────┐\n";
 	std::cout << "│   Index  │First Name│ Last Name│ Nickname │\n";
-	std::cout << "├──────────┼──────────┼──────────┼──────────┤\n";
 	for (int i = 0; i < PhoneBook::contacts_count; i++)
+	{
+		std::cout << "├──────────┼──────────┼──────────┼──────────┤\n";
 		contact[i].displayLine(i);
+	}
 	std::cout << "└──────────┴──────────┴──────────┴──────────┘\n";
 
 }
