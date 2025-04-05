@@ -6,7 +6,7 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:24:50 by throbert          #+#    #+#             */
-/*   Updated: 2025/04/05 13:34:53 by throbert         ###   ########.fr       */
+/*   Updated: 2025/04/05 14:03:43 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,16 @@ static int isempty(std::string input)
 	return 0;
 }
 
+void Contact::autoSetContacts()
+{
+        firstname = "FirstName666";
+        lastname = "LastName666";
+        nickname = "NickName666";
+        phonenumber = "666666666";
+        darksecret = "DarkSecret666";
+		is_set = 1;
+}
+
 void Contact::setContact()
 {
 	std::string	input;
@@ -172,7 +182,8 @@ Contact::Contact() :
 	lastname(""),
 	nickname(""),
 	phonenumber(""),
-	darksecret("")
+	darksecret(""),
+	is_set(false)
 {}
 
 Contact::Contact(const Contact &other)

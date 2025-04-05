@@ -6,7 +6,7 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:24:46 by throbert          #+#    #+#             */
-/*   Updated: 2025/04/05 13:43:27 by throbert         ###   ########.fr       */
+/*   Updated: 2025/04/05 14:04:49 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,14 @@ void PhoneBook::searchContact()
 	else
 		contact[index].displayContact();
 }
+
 void PhoneBook::addContact()
 {
-	contact[contacts_count].setContact();
-	
-	this->contacts_count++;
+    contact[contacts_count % 8].setContact();
+	if (contacts_count < 8)
+		contacts_count++;
 }
+
 
 PhoneBook::PhoneBook() :
 	contacts_count(0)
@@ -83,3 +85,14 @@ PhoneBook &PhoneBook::operator=(const PhoneBook &other)
 
 PhoneBook::~PhoneBook() 
 {}
+
+
+
+void PhoneBook::autoFill()
+{
+    for (int i = 0; i < 8; i++)
+    {
+        contact[i].autoSetContacts();  // Remplir chaque contact avec les valeurs définies dans autoSetContacts
+    }
+    contacts_count = 8;  // Indique que tous les contacts sont remplis
+}

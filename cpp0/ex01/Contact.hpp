@@ -6,7 +6,7 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:24:52 by throbert          #+#    #+#             */
-/*   Updated: 2025/04/05 13:29:37 by throbert         ###   ########.fr       */
+/*   Updated: 2025/04/05 13:57:20 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ public:
 	void setContact();
 	void displayContact();
 	bool isSet() const;
+	void autoSetContacts();
 
 private:
 	std::string firstname;
