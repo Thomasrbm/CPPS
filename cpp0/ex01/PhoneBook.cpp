@@ -6,7 +6,7 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:24:46 by throbert          #+#    #+#             */
-/*   Updated: 2025/04/05 13:40:00 by throbert         ###   ########.fr       */
+/*   Updated: 2025/04/05 13:43:27 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ static int is_index(std::string	input)
 {
 	for (int i = 0; i <= 2; i++)
 	{
+		if (input.length() != 1)
+			return 0;
 		if (input[i] >= '1' && input[i] <= '8')
 			return 1;
 	}
@@ -44,13 +46,13 @@ void PhoneBook::searchContact()
 	std::cout << "Enter an index : ";
 	if (!getline(std::cin, input))
 		return;
-	index = std::atoi(input.c_str()) - 1;
 	if (!is_index(input))
 	{
-		std::cout << std::endl << "/!\\ Not an index ! /!\\" << std::endl << std::endl;
+		std::cout << std::endl << "/!\\ Not a valid index ! /!\\" << std::endl << std::endl;
 		return;
 	}
-	else if (!contact[index].isSet())
+	index = std::atoi(input.c_str()) - 1;
+	if (!contact[index].isSet())
 	{
 		std::cout << std::endl << "/!\\ Contact of this index is not set /!\\" << std::endl << std::endl;
 		return;
