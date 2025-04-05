@@ -6,7 +6,7 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:24:52 by throbert          #+#    #+#             */
-/*   Updated: 2025/04/04 21:47:34 by throbert         ###   ########.fr       */
+/*   Updated: 2025/04/05 13:29:37 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ public:
 	void setDarksecret( std::string darksecret);
 	void displayLine(int index);
 	void setContact();
+	void displayContact();
+	bool isSet() const;
 
 private:
 	std::string firstname;
@@ -37,4 +39,5 @@ private:
 	std::string nickname;
 	std::string phonenumber;
 	std::string darksecret;
+	bool 		is_set;
 };

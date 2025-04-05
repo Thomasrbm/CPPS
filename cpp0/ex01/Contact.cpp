@@ -6,7 +6,7 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:24:50 by throbert          #+#    #+#             */
-/*   Updated: 2025/04/05 09:59:32 by throbert         ###   ########.fr       */
+/*   Updated: 2025/04/05 13:34:53 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,20 @@ void Contact::setDarksecret(std::string darksecret)
 	this->darksecret = darksecret;	
 }
 
+bool Contact::isSet() const  // CONST ???
+{
+	return is_set;
+}
+
+void Contact::displayContact()
+{
+	std::cout << "firstname : " << firstname << std::endl;
+	std::cout << "lastname : " << lastname << std::endl;
+	std::cout << "nickname : " << nickname << std::endl;
+	std::cout << "phone number : " << phonenumber << std::endl;
+	std::cout << "dark secret : " << darksecret << std::endl;
+}
+
 // return un string qui sarrette a 10char et put a point 
 // si plus de 10char.
 static std::string	format_field(std::string input)
@@ -73,17 +87,6 @@ void Contact::displayLine(int index)
 			  << "│" << std::setw(10) << format_field(nickname)
 			  << "│" << std::endl;
 }
-
-// le fait de mettre tout avant les {}, ca veut dire :
-// assigne des la creation, et pas cree a valeur aleatoire puis reassigne.
-// pas oublier le : et les , 
-Contact::Contact() :
-	firstname(""),
-	lastname(""),
-	nickname(""),
-	phonenumber(""),
-	darksecret("")
-{}
 
 int is_phone_number(std::string phone_number)
 {
@@ -158,7 +161,19 @@ void Contact::setContact()
 		return;
 	else
 		this->darksecret = input;
+	is_set = true;
 }
+
+// le fait de mettre tout avant les {}, ca veut dire :
+// assigne des la creation, et pas cree a valeur aleatoire puis reassigne.
+// pas oublier le : et les , 
+Contact::Contact() :
+	firstname(""),
+	lastname(""),
+	nickname(""),
+	phonenumber(""),
+	darksecret("")
+{}
 
 Contact::Contact(const Contact &other)
 {
@@ -179,3 +194,4 @@ Contact &Contact::operator=(const Contact &other)
 
 Contact::~Contact() 
 {}
+

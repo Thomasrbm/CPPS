@@ -59,6 +59,9 @@
         "typeinfo": "cpp",
         "semaphore": "cpp",
         "__nullptr": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "charconv": "cpp",
+        "format": "cpp",
+        "variant": "cpp"
     }
 }
