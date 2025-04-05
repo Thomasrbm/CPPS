@@ -6,7 +6,7 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:24:50 by throbert          #+#    #+#             */
-/*   Updated: 2025/04/04 22:09:54 by throbert         ###   ########.fr       */
+/*   Updated: 2025/04/05 09:59:32 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,12 @@ static std::string	format_field(std::string input)
 
 	for (int i = 0; input[i];)
 	{
-		if (i > 10)
+		if (i >= 9)
 		{
-			result[i] = '.';
+			result += '.';   // ajoute en fin de chaine directement sans index
 			break;
 		}
-		result[i] = input[i];
+		result += input[i];
 		i++;
 	}
 	return (result);
@@ -68,9 +68,9 @@ static std::string	format_field(std::string input)
 void Contact::displayLine(int index)
 {
 	std::cout << "│" << std::setw(10) << index
-			  << "│" << std::setw(10) << format_field(this->firstname) // PAS BESOIN DE THIS ICI ???????????
-			  << "│" << std::setw(10) << format_field(this->lastname) 
-			  << "│" << std::setw(10) << format_field(this->nickname)
+			  << "│" << std::setw(10) << format_field(firstname)
+			  << "│" << std::setw(10) << format_field(lastname) 
+			  << "│" << std::setw(10) << format_field(nickname)
 			  << "│" << std::endl;
 }
 
@@ -90,7 +90,10 @@ int is_phone_number(std::string phone_number)
 	for (int i = 0; phone_number[i]; i++)
 	{
 		if (phone_number[i] < '0' || phone_number[i] > '9')
+		{
+			std::cout << std::endl << "/!\\ Not a phone number ! /!\\" << std::endl << std::endl;
 			return 0;
+		}
 	}	
 	return 1;
 }
