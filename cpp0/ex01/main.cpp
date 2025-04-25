@@ -6,7 +6,7 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:24:44 by throbert          #+#    #+#             */
-/*   Updated: 2025/04/05 13:59:44 by throbert         ###   ########.fr       */
+/*   Updated: 2025/04/25 23:54:22 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int ac, char **av)
 	while (true)
 	{
 		std::cout << ">> ";
-		if (!getline(std::cin, input))
+		if (!getline(std::cin, input)) // flux d entree + string ou stocker le result
 			break;
 		if (input == "ADD")
 			PhoneBook.addContact();
@@ -34,7 +34,7 @@ int	main(int ac, char **av)
 		else if(input == "EXIT")
 			break;
 		else if(input == "FILL")
-		PhoneBook.autoFill();
+			PhoneBook.autoFill();
 	}
 	return 0;
 }

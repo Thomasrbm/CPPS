@@ -6,7 +6,7 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:24:50 by throbert          #+#    #+#             */
-/*   Updated: 2025/04/05 14:03:43 by throbert         ###   ########.fr       */
+/*   Updated: 2025/04/25 22:55:09 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,32 +17,7 @@
 // on envoit les param qu on veut donner
 // on modifie direct ici pas de return;
 
-void Contact::setFirstname(std::string firstname)
-{
-	this->firstname = firstname;
-}
-
-void Contact::setLastname(std::string lastname)
-{
-	this->lastname = lastname;
-}
-
-void Contact::setNickname(std::string nickname)
-{
-	this->nickname = nickname;
-}
-
-void Contact::setPhonenumber(std::string phonenumber)
-{
-	this->phonenumber = phonenumber;	
-}
-
-void Contact::setDarksecret(std::string darksecret)
-{
-	this->darksecret = darksecret;	
-}
-
-bool Contact::isSet() const  // CONST ???
+bool Contact::isSet() const  // const veut dire que cette fonction ne peut pas modifier la classe (genre this->firstname = ...), just un getter.
 {
 	return is_set;
 }

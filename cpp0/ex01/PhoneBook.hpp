@@ -6,7 +6,7 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:05:43 by throbert          #+#    #+#             */
-/*   Updated: 2025/04/05 13:58:15 by throbert         ###   ########.fr       */
+/*   Updated: 2025/04/25 23:54:35 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ class PhoneBook
 {
 public:
 	PhoneBook();
-	PhoneBook(const PhoneBook &other); 
-	PhoneBook &operator=(const PhoneBook &other);
 	~PhoneBook();
 	void	searchContact();
 	void	addContact();
@@ -36,4 +34,5 @@ public:
 private:
 	Contact contact[8];
 	int		contacts_count;
+	int		oldest_index;
 };
