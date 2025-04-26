@@ -6,7 +6,7 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:24:50 by throbert          #+#    #+#             */
-/*   Updated: 2025/04/25 22:55:09 by throbert         ###   ########.fr       */
+/*   Updated: 2025/04/26 00:52:52 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ bool Contact::isSet() const  // const veut dire que cette fonction ne peut pas m
 	return is_set;
 }
 
-void Contact::displayContact()
+void Contact::display_fullContact()
 {
 	std::cout << "firstname : " << firstname << std::endl;
 	std::cout << "lastname : " << lastname << std::endl;
@@ -54,6 +54,8 @@ static std::string	format_field(std::string input)
 // force largeur du champ a 10.
 // affiche le truc qui vient juste apres a droite
 // s applique que pour un input a la fois
+//
+// s ecrit par la droite 
 void Contact::displayLine(int index)
 {
 	std::cout << "│" << std::setw(10) << index
@@ -109,13 +111,13 @@ void Contact::setContact()
 {
 	std::string	input;
 
-	std::cout << "firstname : ";
-	if (!getline(std::cin, input))
+	std::cout << "firstname : ";  // indique le champ a remplir 
+	if (!getline(std::cin, input))  // grab ce quon ecrit stock dans input , attend un input avant de passer a la suite 
 		return;
 	if (isempty(input))
 		return;
 	else
-		this->firstname = input;
+		this->firstname = input; // atribut ce qui a ete ecrit.
 	std::cout << "lastname : ";
 	if (!getline(std::cin, input))
 		return;
@@ -159,25 +161,9 @@ Contact::Contact() :
 	phonenumber(""),
 	darksecret(""),
 	is_set(false)
-{}
-
-Contact::Contact(const Contact &other)
 {
-	*this = other;
-}
-
-Contact &Contact::operator=(const Contact &other)
-{
-	if (this != &other) {
-		this->firstname = other.firstname;
-		this->lastname = other.lastname;
-		this->nickname = other.nickname;
-		this->phonenumber = other.phonenumber;
-		this->darksecret = other.darksecret;
-	}
-	return *this;
 }
 
 Contact::~Contact() 
-{}
-
+{
+}

@@ -6,7 +6,7 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:24:52 by throbert          #+#    #+#             */
-/*   Updated: 2025/04/05 13:57:20 by throbert         ###   ########.fr       */
+/*   Updated: 2025/04/26 00:44:03 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,10 @@ class Contact
 {
 public:
 	Contact();
-	Contact(const Contact &);
-	Contact &operator=(const Contact &);
 	~Contact();
-	void setFirstname(std::string firstname);
-	void setLastname(std::string lastname);
-	void setNickname(std::string nickname);
-	void setPhonenumber(std::string phonenumber);
-	void setDarksecret( std::string darksecret);
 	void displayLine(int index);
 	void setContact();
-	void displayContact();
+	void display_fullContact();
 	bool isSet() const;
 	void autoSetContacts();
 
