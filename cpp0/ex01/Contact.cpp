@@ -6,7 +6,7 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:24:50 by throbert          #+#    #+#             */
-/*   Updated: 2025/04/26 00:52:52 by throbert         ###   ########.fr       */
+/*   Updated: 2025/04/28 20:43:09 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ void Contact::setContact()
 	if (isempty(input))
 		return;
 	else
-		this->firstname = input; // atribut ce qui a ete ecrit.
+		this->firstname = input; // attribut ce qui a ete ecrit.
 	std::cout << "lastname : ";
 	if (!getline(std::cin, input))
 		return;

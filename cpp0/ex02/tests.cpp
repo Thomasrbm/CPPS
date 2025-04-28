@@ -43,7 +43,7 @@ int		main( void ) {
 						// va creer le tab et allouer du debut (0 = 42 a 7 = 16576)
 
 	accounts_t::iterator	acc_begin	= accounts.begin(); // begin et end sont de vector pointeur vers 1er et dernier.
-	accounts_t::iterator	acc_end		= accounts.end();
+	accounts_t::iterator	acc_end		= accounts.end(); // viennent de la librairie vector. pointe auto vers debut et fin
 
 	int	const			d[]			= { 5, 765, 564, 2, 87, 23, 9, 20 }; // les montants a depot sur chaque compte
 	size_t const		d_size( sizeof(d) / sizeof(int) ); // 8 depots
@@ -70,7 +70,7 @@ int		main( void ) {
 	Account::displayAccountsInfos();
 	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
 
-	for ( acc_int_t it( acc_begin, wit_begin ); // 
+	for ( acc_int_t it( acc_begin, wit_begin );
 		  it.first != acc_end && it.second != wit_end;
 		  ++(it.first), ++(it.second) ) {
 
