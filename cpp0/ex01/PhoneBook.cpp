@@ -6,7 +6,7 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:24:46 by throbert          #+#    #+#             */
-/*   Updated: 2025/04/26 00:57:49 by throbert         ###   ########.fr       */
+/*   Updated: 2025/04/29 19:57:09 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	PhoneBook::display()
 {
 	std::cout << "┌──────────┬──────────┬──────────┬──────────┐" << std::endl;
-	std::cout << "│   Index  │First Name│ Last Name│ Nickname │" << std::endl;
+	std::cout << "│     Index│First Name│ Last Name│  Nickname│" << std::endl;
 	for (int i = 0; i < PhoneBook::contacts_count; i++)
 	{
 		std::cout << "├──────────┼──────────┼──────────┼──────────┤" << std::endl;
@@ -29,17 +29,15 @@ void	PhoneBook::display()
 // le . vient pour appeler les fonction de variable appartenant avec une methode.
 // je cree la variable de type std::string (methode , string est la methode comme phonebook).
 // j appel donc la fonction de la methode string.
-static int is_index(std::string	input)
+static int is_index(std::string input)
 {
-	for (int i = 0; i <= 2; i++)
-	{
-		if (input.length() != 1) // lenght c est un strlen, ou plutot ca lit une variable qui contient la taille. : c est un getter. (pour savoir si juste 1 de taille)
-			return 0;
-		if (input[i] >= '1' && input[i] <= '8')
-			return 1;
-	}
+	if (input.length() != 1)
+		return 0;
+	if (input[0] >= '1' && input[0] <= '8')
+		return 1;
 	return 0;
 }
+
 
 void PhoneBook::searchContact()
 {

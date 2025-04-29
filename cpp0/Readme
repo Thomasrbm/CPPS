@@ -211,12 +211,18 @@ Methodes (fonction liees a la structure) :
 APPEL DE METHODE 
 ->
 
-    Nom::methode_name()
-    {
-        
-    }
+declarer un objet de la classe et utiliser l objet pour appeler les methode de cette classe
 
 
+class MyClass {
+public:
+	static void sayHello() {
+		std::cout << "Hello\n";
+	}
+};
+
+MyClass obj;
+obj.sayHello(); // possible mais PAS statique strictement (moins propre)
 
 
 
@@ -224,8 +230,10 @@ APPEL DE METHODE
 
 APPEL STATIQUE
 
+directement appeler la methode sans objet prealable
 
 
+MyClass::sayHello(); // ✅ appel statique
 
 
 

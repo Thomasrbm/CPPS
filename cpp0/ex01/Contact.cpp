@@ -6,7 +6,7 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:24:50 by throbert          #+#    #+#             */
-/*   Updated: 2025/04/28 20:43:09 by throbert         ###   ########.fr       */
+/*   Updated: 2025/04/29 20:35:19 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,8 @@ int is_phone_number(std::string phone_number)
 {
 	for (int i = 0; phone_number[i]; i++)
 	{
+		if (isspace(phone_number[i]))
+			continue; // ca cut le for la ou il est pour reprendre le for du debut pour le i++ suivant
 		if (phone_number[i] < '0' || phone_number[i] > '9')
 		{
 			std::cout << std::endl << "/!\\ Not a phone number ! /!\\" << std::endl << std::endl;
@@ -77,6 +79,7 @@ int is_phone_number(std::string phone_number)
 	}	
 	return 1;
 }
+
 
 static int isempty(std::string input)
 {
@@ -99,11 +102,11 @@ static int isempty(std::string input)
 
 void Contact::autoSetContacts()
 {
-        firstname = "FirstName666";
-        lastname = "LastName666";
-        nickname = "NickName666";
-        phonenumber = "666666666";
-        darksecret = "DarkSecret666";
+        firstname = "FirstName777";
+        lastname = "LastName777";
+        nickname = "NickName777";
+        phonenumber = "777777777";
+        darksecret = "DarkSecret777";
 		is_set = 1;
 }
 

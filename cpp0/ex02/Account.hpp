@@ -39,7 +39,7 @@ public:
 
 private:
 
-	static int	_nbAccounts; // commen en c, variable unique pour toute la classe et pour nouvelle pour chaque objet.
+	static int	_nbAccounts; // commen en c, variable unique pour toute la classe et pour nouvelle pour chaque objet.  Un peu des global au sein d une meme classe.
 	static int	_totalAmount; // garde sa valeur entre les appels.
 	static int	_totalNbDeposits;
 	static int	_totalNbWithdrawals;

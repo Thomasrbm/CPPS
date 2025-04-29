@@ -6,7 +6,7 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:24:44 by throbert          #+#    #+#             */
-/*   Updated: 2025/04/25 23:54:22 by throbert         ###   ########.fr       */
+/*   Updated: 2025/04/29 19:50:18 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ int	main(int ac, char **av)
 			PhoneBook.searchContact();
 		else if(input == "EXIT")
 			break;
-		else if(input == "FILL")
-			PhoneBook.autoFill();
+		// else if(input == "FILL")
+		// 	PhoneBook.autoFill();
 	}
 	return 0;
 }

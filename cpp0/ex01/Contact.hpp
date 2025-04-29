@@ -6,7 +6,7 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:24:52 by throbert          #+#    #+#             */
-/*   Updated: 2025/04/26 00:44:03 by throbert         ###   ########.fr       */
+/*   Updated: 2025/04/29 20:10:51 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 	void displayLine(int index);
 	void setContact();
 	void display_fullContact();
-	bool isSet() const;
+	bool isSet() const; // getter, peut pas modifier l objet
 	void autoSetContacts();
 
 private:
