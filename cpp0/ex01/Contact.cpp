@@ -6,7 +6,7 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:24:50 by throbert          #+#    #+#             */
-/*   Updated: 2025/04/29 20:35:19 by throbert         ###   ########.fr       */
+/*   Updated: 2025/04/29 21:30:31 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,45 +114,34 @@ void Contact::setContact()
 {
 	std::string	input;
 
-	std::cout << "firstname : ";  // indique le champ a remplir 
-	if (!getline(std::cin, input))  // grab ce quon ecrit stock dans input , attend un input avant de passer a la suite 
-		return;
-	if (isempty(input))
-		return;
-	else
-		this->firstname = input; // attribut ce qui a ete ecrit.
-	std::cout << "lastname : ";
-	if (!getline(std::cin, input))
-		return;
-	if (isempty(input))
-		return;
-	else
-		this->lastname = input;
-	std::cout << "nickname : ";
-	if (!getline(std::cin, input))
-		return;
-	if (isempty(input))
-		return;
-	else
-		this->nickname = input;
-	std::cout << "phone number : ";
-	if (!getline(std::cin, input))
-		return;
-	if (!is_phone_number(input))
-		return;
-	if (isempty(input))
-		return;
-	else
-		this->phonenumber = input;
-	std::cout << "dark secret : ";
-	if (!getline(std::cin, input))
-		return;
-	if (isempty(input))
-		return;
-	else
-		this->darksecret = input;
-	is_set = true;
+	std::cout << "firstname: ";
+	while (getline(std::cin, input) && isempty(input))
+		std::cout << "firstname: ";
+	this->firstname = input;
+	
+	std::cout << "lastname: ";
+	while (getline(std::cin, input) && isempty(input))
+		std::cout << "lastname: ";
+	this->lastname = input;
+	
+	std::cout << "nickname: ";
+	while (getline(std::cin, input) && isempty(input))
+		std::cout << "nickname: ";
+	this->nickname = input;
+	
+	std::cout << "phone number: ";
+	while (getline(std::cin, input) && (isempty(input) || !is_phone_number(input)))
+		std::cout << "phone number: ";
+	this->phonenumber = input;
+	
+	std::cout << "dark secret: ";
+	while (getline(std::cin, input) && isempty(input))
+		std::cout << "dark secret: ";
+	this->darksecret = input;
+	
+	this->is_set = true;
 }
+
 
 // le fait de mettre tout avant les {}, ca veut dire :
 // assigne des la creation, et pas cree a valeur aleatoire puis reassigne.
