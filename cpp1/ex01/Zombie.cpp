@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 20:59:17 by throbert          #+#    #+#             */
-/*   Updated: 2025/04/30 05:56:45 by throbert         ###   ########.fr       */
+/*   Created: 2025/04/30 05:59:47 by throbert          #+#    #+#             */
+/*   Updated: 2025/04/30 06:17:36 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie	*newZombie(std::string name)
+void	Zombie::announce(void)
 {
-	return new Zombie(name); // appel constructeur avec new devant
+	std::cout << this->name << ": " << "BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-// existe jusqu a la fin du code 
+Zombie::Zombie(std::string name)
+{
+	this->name = name;
+}
+
+Zombie::Zombie()
+{
+}
+
+Zombie::~Zombie()
+{
+	std::cout << this->name << ": " << "destroyed" << std::endl;
+}

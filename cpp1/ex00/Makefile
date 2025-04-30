@@ -5,9 +5,9 @@ CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98
 
 OBJDIR = ../objects
 
-SRCS = randomChump.cpp
-	   main.cpp
-	   newZombie.cpp
+SRCS = randomChump.cpp \
+	   main.cpp \
+	   newZombie.cpp \
 	   Zombie.cpp
 
 OBJS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRCS))

@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 20:59:17 by throbert          #+#    #+#             */
-/*   Updated: 2025/04/30 05:56:45 by throbert         ###   ########.fr       */
+/*   Created: 2025/04/30 05:59:45 by throbert          #+#    #+#             */
+/*   Updated: 2025/04/30 06:12:22 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <string>
+#include <iostream>
 
-Zombie	*newZombie(std::string name)
+class Zombie
 {
-	return new Zombie(name); // appel constructeur avec new devant
-}
 
-// existe jusqu a la fin du code 
+public:
+
+	Zombie(std::string name);
+	Zombie();
+	~Zombie();
+	void		announce(void);
+
+private:
+
+	std::string name;
+
+};
+
+Zombie* zombieHorde(int N, std::string name);

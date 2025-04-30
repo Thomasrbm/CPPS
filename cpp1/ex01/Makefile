@@ -1,11 +1,14 @@
-NAME = megaphone
+NAME = Moar_brainz!
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98
 
 OBJDIR = ../objects
 
-SRCS = megaphone.cpp
+SRCS = main.cpp \
+	   Zombie.cpp \
+	   Zombie.hpp \
+	   zombieHorde.cpp
 
 OBJS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRCS))
 

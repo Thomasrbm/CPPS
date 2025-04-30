@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 20:59:17 by throbert          #+#    #+#             */
-/*   Updated: 2025/04/30 05:56:45 by throbert         ###   ########.fr       */
+/*   Created: 2025/04/30 05:59:43 by throbert          #+#    #+#             */
+/*   Updated: 2025/04/30 06:19:19 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie	*newZombie(std::string name)
+Zombie* zombieHorde(int N, std::string name)
 {
-	return new Zombie(name); // appel constructeur avec new devant
-}
+	Zombie* horde = new Zombie[N];
+	for (int i = 0; i < N; ++i)
+		horde[i] = Zombie(name);
 
-// existe jusqu a la fin du code 
+	return horde;
+}
