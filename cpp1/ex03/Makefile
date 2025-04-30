@@ -1,11 +1,14 @@
-NAME = megaphone
+NAME = Unnecessary_violence
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98
 
 OBJDIR = ../objects
 
-SRCS = megaphone.cpp
+SRCS = main.cpp \
+	   HumanA.cpp \
+	   HumanB.cpp \
+	   Weapon.cpp
 
 OBJS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRCS))
 

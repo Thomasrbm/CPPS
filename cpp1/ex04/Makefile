@@ -1,11 +1,12 @@
-NAME = megaphone
+NAME = Sed_is_for_losers
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98
 
 OBJDIR = ../objects
 
-SRCS = megaphone.cpp
+SRCS = main.cpp \
+	   
 
 OBJS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRCS))
 
