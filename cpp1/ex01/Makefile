@@ -7,7 +7,6 @@ OBJDIR = ../objects
 
 SRCS = main.cpp \
 	   Zombie.cpp \
-	   Zombie.hpp \
 	   zombieHorde.cpp
 
 OBJS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRCS))

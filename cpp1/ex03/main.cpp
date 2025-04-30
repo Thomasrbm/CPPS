@@ -1,22 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 05:59:43 by throbert          #+#    #+#             */
-/*   Updated: 2025/04/30 13:37:54 by throbert         ###   ########.fr       */
+/*   Created: 2025/04/30 13:49:11 by throbert          #+#    #+#             */
+/*   Updated: 2025/04/30 13:49:12 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-
-Zombie* zombieHorde(int N, std::string name)
-{
-	Zombie* horde = new Zombie[N];
-	for (int i = 0; i < N; ++i)
-		horde[i].setName(name);
-
-	return horde;
-}

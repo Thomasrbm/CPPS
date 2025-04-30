@@ -6,10 +6,11 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 05:59:45 by throbert          #+#    #+#             */
-/*   Updated: 2025/04/30 06:12:22 by throbert         ###   ########.fr       */
+/*   Updated: 2025/04/30 13:49:52 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include <string>
 #include <iostream>
 
@@ -21,7 +22,8 @@ public:
 	Zombie(std::string name);
 	Zombie();
 	~Zombie();
-	void		announce(void);
+	void	announce(void);
+	void	setName(std::string &name);
 
 private:
 
