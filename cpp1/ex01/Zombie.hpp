@@ -6,7 +6,7 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 05:59:45 by throbert          #+#    #+#             */
-/*   Updated: 2025/04/30 13:49:52 by throbert         ###   ########.fr       */
+/*   Updated: 2025/04/30 23:14:09 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,4 @@ private:
 
 };
 
-Zombie* zombieHorde(int N, std::string name);
+Zombie* zombieHorde(int N, std::string name); // hors car cree un groupe de zombie, pas besoin que la classe y ait acces

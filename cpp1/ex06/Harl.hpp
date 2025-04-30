@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 13:49:04 by throbert          #+#    #+#             */
-/*   Updated: 2025/04/30 23:30:03 by throbert         ###   ########.fr       */
+/*   Created: 2025/04/30 22:01:35 by throbert          #+#    #+#             */
+/*   Updated: 2025/04/30 22:17:07 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.hpp"
+#pragma once
+#include <iostream>
 
-void HumanB::attack()
+class Harl
 {
-	if (this->weapon)
-		std::cout << this->name << " attacks with their " << this->weapon->getType() << std::endl;
-	else
-		std::cout << this->name << " has no weapon to attack with!" << std::endl;
-}
 
-void HumanB::setWeapon(Weapon& weapon)
-{
-	this->weapon = &weapon;
-    
-}
+public:
+	Harl();
+	~Harl();
+	void	complain( std::string level );
 
-HumanB::HumanB(std::string name) : 
-    name(name),
-    weapon(NULL)
-{
-}
 
-HumanB::~HumanB()
-{
-}
+private:
+	void	debug( void );
+	void	info( void );
+	void	warning( void );
+	void	error( void );
+};

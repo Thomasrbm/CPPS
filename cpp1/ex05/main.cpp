@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 13:49:04 by throbert          #+#    #+#             */
-/*   Updated: 2025/04/30 23:30:03 by throbert         ###   ########.fr       */
+/*   Created: 2025/04/30 22:45:57 by throbert          #+#    #+#             */
+/*   Updated: 2025/04/30 22:47:17 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.hpp"
+#include "Harl.hpp"
 
-void HumanB::attack()
+int main(int ac, char **av)
 {
-	if (this->weapon)
-		std::cout << this->name << " attacks with their " << this->weapon->getType() << std::endl;
-	else
-		std::cout << this->name << " has no weapon to attack with!" << std::endl;
-}
+    if (ac != 2)
+    {
+        std::cerr << "Usage: ./Harl_2.0 <DEBUG|INFO|WARNING|ERROR>" << std::endl;
+        return 1;
+    }
 
-void HumanB::setWeapon(Weapon& weapon)
-{
-	this->weapon = &weapon;
-    
-}
-
-HumanB::HumanB(std::string name) : 
-    name(name),
-    weapon(NULL)
-{
-}
-
-HumanB::~HumanB()
-{
+    Harl harl;
+    harl.complain(av[1]);
+    return 0;
 }

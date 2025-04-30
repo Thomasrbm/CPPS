@@ -6,11 +6,14 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 20:59:15 by throbert          #+#    #+#             */
-/*   Updated: 2025/04/30 05:56:13 by throbert         ###   ########.fr       */
+/*   Updated: 2025/04/30 23:24:31 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+
+// allouer sur la stack car son usage est uniquement ici dans ce scope je men sert plus apres.
+// pas besoin que cette ft renvoit un malloc
 
 void	randomChump(std::string name)
 {
