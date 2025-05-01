@@ -3,7 +3,7 @@ NAME = megaphone
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98
 
-OBJDIR = ../objects
+OBJDIR = ./objects
 
 SRCS = megaphone.cpp
 

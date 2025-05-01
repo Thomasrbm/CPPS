@@ -6,11 +6,12 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 00:23:38 by throbert          #+#    #+#             */
-/*   Updated: 2025/05/01 00:57:42 by throbert         ###   ########.fr       */
+/*   Updated: 2025/05/01 02:24:27 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+#include <iostream>
 
 // constructeur et destru (meme de copie) on peut changer leurs param (pas le reste)
 class Fixed

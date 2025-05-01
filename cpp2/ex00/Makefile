@@ -1,12 +1,12 @@
-NAME = Harl_filter
+NAME = Mon_premier_canon
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98
 
-OBJDIR = ../objects
+OBJDIR = ./objects
 
 SRCS = main.cpp \
-	   Harl.cpp
+	   Fixed.cpp
 
 OBJS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRCS))
 
