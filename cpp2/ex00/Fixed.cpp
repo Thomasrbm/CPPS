@@ -6,13 +6,13 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 00:23:46 by throbert          #+#    #+#             */
-/*   Updated: 2025/05/01 02:48:38 by throbert         ###   ########.fr       */
+/*   Updated: 2025/05/02 18:20:33 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-
+const int Fixed::fractionnary_part = 8;
 
 int Fixed::getRawBits( void ) const
 {
@@ -42,6 +42,9 @@ Fixed::Fixed(const Fixed& other)
 	std::cout << "Copy constructor called" << std::endl;
 	this->value = other.getRawBits();
 }
+
+
+// Tu ajoute une fonctionnalit qui depend du proto.  des que tu va donner ces param a ton operateur il va comprendre qu il doit switcher sur ce comportement.
 
 // pour un a = b
 // this = a

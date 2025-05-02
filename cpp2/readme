@@ -1,0 +1,37 @@
+
+
+
+
+Float : (notation scientifique binaire)
+
+	La virgule peut changer de place selon le nombre qu on va representer
+
+	42 = 101010
+
+	mantisse = toujours 1. qq chose ici = 1.01010
+
+	donc on fait en sorte de trouver l exposant pour que mult par la mentisse il donne le nobre d origine en binaire.
+
+	comme l exposant change ca deplace la vigule
+
+	2^5  = vigule est 5 bit vers la gauche en partant de la droite du nombre binaire.
+
+
+
+	pas precis car : l exposant change donc les approximation aussi selon les valeurs.
+
+
+
+
+
+
+Fixed : plus precis mais moins grand.
+
+	tu definis le nombre de bit pour chaque partie.
+
+
+
+	Plus precis car : c est toujours la meme approximation :
+
+	La précision est toujours la même :
+👉 1 / 256 ≈ 0.0039
