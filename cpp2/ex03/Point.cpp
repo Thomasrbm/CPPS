@@ -6,11 +6,21 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 18:19:01 by throbert          #+#    #+#             */
-/*   Updated: 2025/05/02 19:18:36 by throbert         ###   ########.fr       */
+/*   Updated: 2025/05/05 18:22:17 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
+
+int& Point::getX(Point& a)
+{
+	return a.x.getValue(a.x);
+}
+
+int& Point::getY(Point& a)
+{
+	return a.y.getValue(a.y);
+}
 
 Point::Point(const float &a, const float &b) :
 	x(a),

@@ -6,7 +6,7 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 02:53:55 by throbert          #+#    #+#             */
-/*   Updated: 2025/05/02 18:18:41 by throbert         ###   ########.fr       */
+/*   Updated: 2025/05/05 18:28:36 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ public:
 	static const Fixed& min(const Fixed& a, const Fixed& b);
 	static Fixed& max(Fixed& a, Fixed& b);
 	static const Fixed& max(const Fixed& a, const Fixed& b);
+	int& getValue(Fixed& a);
+	Fixed operator-();
 
 private:
 	int value;

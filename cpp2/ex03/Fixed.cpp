@@ -6,7 +6,7 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 02:53:57 by throbert          #+#    #+#             */
-/*   Updated: 2025/05/02 18:18:20 by throbert         ###   ########.fr       */
+/*   Updated: 2025/05/05 18:31:03 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 	
 const int Fixed::fractionnary_part = 8;
 
+
+int& Fixed::getValue(Fixed& a)
+{
+	return this->value;
+}
 
 Fixed& Fixed::min(Fixed& a, Fixed& b)
 {
@@ -88,6 +93,11 @@ Fixed Fixed::operator+(const Fixed& other)
 Fixed Fixed::operator-(const Fixed& other)
 {
 	return (this->value - other.value);
+}
+
+Fixed Fixed::operator-()
+{
+	return Fixed(0) - *this;  // CONVERTIT : car 0 - -1 = 1  et 0 - 1 = -1
 }
 
 Fixed Fixed::operator*(const Fixed& other)
