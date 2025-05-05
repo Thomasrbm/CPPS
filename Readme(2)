@@ -1,0 +1,70 @@
+
+
+
+New :
+
+    on pourrait use malloc mais avec les objet NON
+    car cq n appelerait pas le constructeur.
+    pareil pour le free.
+
+
+
+
+References :
+
+    pas comme les adresses du C.
+    en c, l adresse est obtenu avec un ptr et & devant
+
+    en cpp la Reference est un alias (autre nom) qui 
+    renvoit vers l objet/la var.
+
+    Un reference ne print pas l adresse mais bien la valeur
+
+
+    Se déclare avec & collé au type.
+
+
+
+
+
+Virtual : 
+
+
+    Pragma once pour les héritage de classes.
+
+
+    Pour une fonction ça permet ensuite d override une fonction
+    du parent pour la redfinir pour l enfant et use la bonne
+    fonction si elle a le meme nom. 
+
+        Sans virtual :
+
+    class A {
+    public:
+        void hello() { std::cout << "A\n"; }
+    };
+
+    class B : public A {
+    public:
+        void hello() { std::cout << "B\n"; }
+    };
+
+    A* obj = new B;
+    obj->hello(); // Affiche A ❌
+    Même si obj pointe vers un B, C++ appelle A::hello().
+
+        Avec virtual :
+
+    class A {
+    public:
+        virtual void hello() { std::cout << "A\n"; }
+    };
+
+    class B : public A {
+    public:
+        void hello() override { std::cout << "B\n"; }
+    };
+
+    A* obj = new B;
+    obj->hello(); // Affiche B ✅
+    ✅ Grâce à virtual, C++ appelle la bonne méthode à l’exécution, selon le vrai type de l’objet.
