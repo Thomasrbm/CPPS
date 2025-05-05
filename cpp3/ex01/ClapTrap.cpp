@@ -6,7 +6,7 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:44:41 by throbert          #+#    #+#             */
-/*   Updated: 2025/05/05 21:18:23 by throbert         ###   ########.fr       */
+/*   Updated: 2025/05/05 21:35:02 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,10 @@ ClapTrap::ClapTrap(const ClapTrap& other)
 {
 	*this = other;
 	std::cout << "Copy constructor has been called" << std::endl;
+}
+
+ClapTrap::ClapTrap()
+{
 }
 
 ClapTrap::~ClapTrap()
