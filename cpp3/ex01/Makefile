@@ -7,7 +7,8 @@ CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98
 OBJDIR = ./objects
 
 SRCS = main.cpp \
-	   Fixed.cpp
+	   ClapTrap.cpp \
+	   ScavTrap.cpp
 
 OBJS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRCS))
 

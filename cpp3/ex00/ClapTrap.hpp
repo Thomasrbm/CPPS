@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: throbert <throbert@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:41:03 by throbert          #+#    #+#             */
-/*   Updated: 2025/05/04 22:57:13 by throbert         ###   ########.fr       */
+/*   Updated: 2025/05/08 17:47:09 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,27 @@
 
 class ClapTrap 
 {
-    
+	
 public:
-    ClapTrap(std::string name);
-    ClapTrap(const ClapTrap& other);
-    ClapTrap& operator=(const ClapTrap& other);
-    ~ClapTrap();
-    void attack(const std::string& target);
-    void takeDamage(unsigned int amount);
-    void beRepaired(unsigned int amount);
-    const std::string& getName() const;
-    const int& getEnergy_point() const;
-    const int& getAttack() const;
-    void setAttack(int new_attack);
+	ClapTrap();
+	ClapTrap(std::string name);
+	ClapTrap(const ClapTrap& other);
+	ClapTrap& operator=(const ClapTrap& other);
+	~ClapTrap();
+	void attack(const std::string& target);
+	void takeDamage(unsigned int amount);
+	void beRepaired(unsigned int amount);
+	const std::string& getName() const;
+	const unsigned int& getEnergy_point() const;
+	const unsigned int& getAttack() const;
+	const unsigned int& getLife() const;
+	void setAttack(int new_attack);
+	void  setEnergy(int amout);
+
 
 private:
-    std::string name;
-    int hit_points;
-    int energy_point;
-    int attack_damage;
-    
+	std::string name;
+	unsigned int  hit_points;
+	unsigned int energy_point;
+	unsigned int attack_damage;
 };
