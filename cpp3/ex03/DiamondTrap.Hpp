@@ -1,43 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.Hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/04 19:01:54 by throbert          #+#    #+#             */
-/*   Updated: 2025/05/08 19:45:08 by throbert         ###   ########.fr       */
+/*   Created: 2025/05/09 03:56:00 by throbert          #+#    #+#             */
+/*   Updated: 2025/05/09 03:58:13 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class DiamondTrap : public FragTrap, public ScavTrap
 {
-
-public:
-	ScavTrap(std::string name);
-	ScavTrap(const ScavTrap& other);
-	const ScavTrap& operator=(const ScavTrap& other);
-	~ScavTrap();
-	void guardGate();
-
-private:
-	bool guarded_mode;
-	
+    
 };
-
-// les héritiers doivent aussi re décla les forme canoniques 
-
-
-// protected : permet contrairement a private que les classes derivés aient aussi accès au var / ft.
-
-
-// cree d abord classe de base puis sous classe, et inversemeent a destru.  car la dependenace princi est la classe de base . 
-
-
-
 
 
 
@@ -66,7 +46,7 @@ private:
 
 
 	//     A 
-	//    / \
+	//    /  
 	//   B   C 
 	//    \ /
 	//    	D

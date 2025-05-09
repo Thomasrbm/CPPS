@@ -6,7 +6,7 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:44:41 by throbert          #+#    #+#             */
-/*   Updated: 2025/05/08 19:02:51 by throbert         ###   ########.fr       */
+/*   Updated: 2025/05/09 03:05:12 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,8 +131,13 @@ ClapTrap::ClapTrap(const ClapTrap& other)
 	std::cout << "ClapTrap Copy constructor has been called for " << this->name << std::endl;
 }
 
-ClapTrap::ClapTrap()
+ClapTrap::ClapTrap() :
+	name("default"),
+	hit_points(0),
+	energy_point(0),
+	attack_damage(0)
 {
+	std::cout << "ClapTrap default Constructor has been called for " << this->name << std::endl;
 }
 
 ClapTrap::~ClapTrap()

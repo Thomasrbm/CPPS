@@ -1,5 +1,4 @@
-NAME = Serena_my_love!
-
+NAME = Repetitive_work
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98
@@ -8,7 +7,6 @@ OBJDIR = ./objects
 
 SRCS = main.cpp \
 	   ClapTrap.cpp \
-	   ScavTrap.cpp \ 
 	   FragTrap.cpp
 
 OBJS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRCS))

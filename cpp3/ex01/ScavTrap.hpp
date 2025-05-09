@@ -6,7 +6,7 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 19:01:54 by throbert          #+#    #+#             */
-/*   Updated: 2025/05/08 19:45:08 by throbert         ###   ########.fr       */
+/*   Updated: 2025/05/09 03:35:45 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@ class ScavTrap : public ClapTrap
 {
 
 public:
+	ScavTrap();
 	ScavTrap(std::string name);
 	ScavTrap(const ScavTrap& other);
 	const ScavTrap& operator=(const ScavTrap& other);
 	~ScavTrap();
 	void guardGate();
+	void attack(const std::string& target); // ajout de virtual dans le claptrap.hpp  pour surcharger
 
 private:
 	bool guarded_mode;
@@ -66,7 +68,7 @@ private:
 
 
 	//     A 
-	//    / \
+	//    /  
 	//   B   C 
 	//    \ /
 	//    	D

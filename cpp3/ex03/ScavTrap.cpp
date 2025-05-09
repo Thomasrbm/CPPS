@@ -6,12 +6,26 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 19:01:51 by throbert          #+#    #+#             */
-/*   Updated: 2025/05/08 19:31:41 by throbert         ###   ########.fr       */
+/*   Updated: 2025/05/09 03:48:16 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
+void ScavTrap::attack(const std::string& target)
+{
+	if (this->energy_point > 0 && this->hit_points > 0 && this->attack_damage > 0)
+	{
+		std::cout << "ScavTrap " << this->name << " attacks " << target << ", causing " << this->attack_damage << " points of damage !" << std::endl;
+		this->energy_point -= 1;
+	}
+	else if (this->energy_point <= 0)
+		std::cout << "/!\\ ScavTrap " << this->name << " cannot attack " << target << " because he lacks energy points : Feniantone... /!\\" << std::endl << std::endl;
+	else if (this->hit_points <= 0)
+		std::cout << "/!\\ ScavTrap " << this->name << " cannot attack " << target << " because he's dead (0 hit points) : REPAIR IT ! /!\\" << std::endl << std::endl;
+	else if (this->attack_damage <= 0)
+		std::cout << "/!\\ ScavTrap " << this->name << " cannot attack " << target << " because he deals no damage (0 attack) :  a weak bastard ;'( /!\\" << std::endl << std::endl;
+}
 
 void ScavTrap::guardGate() 
 {
@@ -29,12 +43,17 @@ void ScavTrap::guardGate()
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap()
 {
-	std::cout << "ScavTrap Constructor has been called for " << this->name << std::endl;
 	this->name = name;
+	std::cout << "ScavTrap Constructor has been called for " << this->name << std::endl;
 	this->hit_points = 100;
-	this->energy_point = 100;
-	this->attack_damage = 30;
+	this->energy_point = 50;
+	this->attack_damage = 20;
 	this->guarded_mode = false;
+}
+
+ScavTrap::ScavTrap() :  ClapTrap()
+{
+	std::cout << "ScavTrap default Constructor has been called for " << this->name << std::endl;
 }
 
 const ScavTrap& ScavTrap::operator=(const ScavTrap& other)
@@ -49,11 +68,11 @@ const ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 	return *this;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& other)
+ScavTrap::ScavTrap(const ScavTrap& other) :  ClapTrap(other)
 {
 	*this = other;
 	this->guarded_mode = false;
-	std::cout << "ScavTrap Copy constructor has been called for " << this->name << std::endl;
+	std::cout << "ScavTrap Copy constructor has been called for " << this->name;
 }
 
 ScavTrap::~ScavTrap()

@@ -6,13 +6,17 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 19:47:25 by throbert          #+#    #+#             */
-/*   Updated: 2025/05/08 19:47:37 by throbert         ###   ########.fr       */
+/*   Updated: 2025/05/09 03:44:11 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "FragTrap.hpp"
+
 int main(void)
 {
+	FragTrap WEOH("WEOH");
 	
-	
+	WEOH.highFivesGuys();
+
 	return 0;
 }

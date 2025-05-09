@@ -6,14 +6,14 @@
 /*   By: throbert <throbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 19:48:06 by throbert          #+#    #+#             */
-/*   Updated: 2025/05/09 04:01:58 by throbert         ###   ########.fr       */
+/*   Updated: 2025/05/09 04:01:54 by throbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap // virtual ici aussi
 {
 
 public:
@@ -24,7 +24,6 @@ public:
     ~FragTrap();
 
     void highFivesGuys(void);
-
 
     
 };

@@ -1,4 +1,5 @@
-NAME = Aaaaand..._OPEN!
+NAME = Now_it’s_weird!
+
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98
@@ -6,7 +7,10 @@ CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98
 OBJDIR = ./objects
 
 SRCS = main.cpp \
-	   Fixed.cpp
+	   ClapTrap.cpp \
+	   ScavTrap.cpp \
+	   FragTrap.cpp \
+	   DiamondTrap.cpp
 
 OBJS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRCS))
 
