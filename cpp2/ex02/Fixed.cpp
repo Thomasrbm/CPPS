@@ -50,57 +50,99 @@ const Fixed& Fixed::max(const Fixed& a, const Fixed& b)
 
 
 
-bool Fixed::operator>(const Fixed& other)  // false / true
+
+
+
+
+bool Fixed::operator>(const Fixed& other) const  // false / true
 {
 	return (this->value > other.value);
 }
 
-bool Fixed::operator<(const Fixed& other)
+bool Fixed::operator<(const Fixed& other) const
 {
 	return (this->value < other.value);
 }
 
-bool Fixed::operator>=(const Fixed& other)
+bool Fixed::operator>=(const Fixed& other) const
 {
 	return (this->value >= other.value);
 }
 
-bool Fixed::operator<=(const Fixed& other)
+bool Fixed::operator<=(const Fixed& other) const
 {
 	return (this->value <= other.value);
 }
 
-bool Fixed::operator!=(const Fixed& other)
+bool Fixed::operator!=(const Fixed& other) const
 {
 	return (this->value != other.value);
 }
 
-bool Fixed::operator==(const Fixed& other) // si ref = modifie directement l objet
+bool Fixed::operator==(const Fixed& other) const // si ref = modifie directement l objet
 {
 	return (this->value == other.value);
 }
 
-Fixed Fixed::operator+(const Fixed& other) // renvoit un nouvel objet donc Fixed
+
+
+
+
+
+
+
+// peut toujours add des entier 
+// MAIS AUSSI DES float. 
+
+// Quand on stock l int en fixed . 
+
+
+// Fixed a(10);        // → value = 10 << 8 = 2560
+// a.toFloat();        // → 2560 / 256 = 10.0f
+
+
+
+// sur float 
+
+// Fixed a(5.05f);                 // value = roundf(5.05 * 256) = 1293
+// a.toFloat();                   // 1293 / 256 ≈ 5.05078
+
+
+Fixed Fixed::operator+(const Fixed& other)// renvoit un nouvel objet donc Fixed
 {
-	return (this->value + other.value);
+    return Fixed(this->toFloat() + other.toFloat());
 }
 
 Fixed Fixed::operator-(const Fixed& other)
 {
-	return (this->value - other.value);
+    return Fixed(this->toFloat() - other.toFloat());
 }
+
+
+
 
 Fixed Fixed::operator*(const Fixed& other)
 {
-	return (this->value * other.value);
+    return Fixed(this->toFloat() * other.toFloat());
 }
+
+
 
 Fixed Fixed::operator/(const Fixed& other)
 {
-	return (this->value / other.value);
+    return Fixed(this->toFloat() / other.toFloat());
 }
 
-Fixed& Fixed::operator++(void) // pas d assignation, no need assignation
+
+
+
+
+
+
+
+
+
+Fixed& Fixed::operator++(void) // pas d assignation, no need assignation  ==> post incrementation.
 {
 	this->value += 1;
 	return (*this);
@@ -116,8 +158,9 @@ Fixed Fixed::operator++(int)  // pre incrementation.
 {
     Fixed tmp(*this);   // copie de l’état actuel. copie de la reference.
     this->value += 1;        // utilise le ++ pré‑incrément  . sur la vrai reference 
-    return tmp;         // renvoit la copie 
+    return tmp;         // renvoit la copie  ===> donc on use la valeur envant dans la boucle mais on a quand meme incremente. 
 }
+
 
 
 Fixed Fixed::operator--(int)
@@ -126,6 +169,12 @@ Fixed Fixed::operator--(int)
     this->value -= 1;
     return tmp;  
 }
+
+
+
+
+
+
 
 int Fixed::getRawBits(void) const
 {
@@ -176,11 +225,20 @@ Fixed &Fixed::operator=(const Fixed &other)
 
 
 
+
+
+
+
+
 std::ostream& operator<<(std::ostream& os, Fixed const& f)
 {
 	os << f.toFloat();
 	return (os);
 }
+
+
+
+
 
 Fixed::~Fixed()
 {

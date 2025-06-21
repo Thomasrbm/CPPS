@@ -31,12 +31,9 @@ Fixed::Fixed() :
 	value(0)
 {
 	std::cout << "Default constructor called" << std::endl;
-
 }
 
-// pas obliger de tout copier.
-// pas d appel au constructeur de base, il construit deja
-// on chosit ce qu on copie (pas obliger de tout copier)
+
 Fixed::Fixed(const Fixed& other)
 {
 	std::cout << "Copy constructor called" << std::endl;
@@ -44,18 +41,19 @@ Fixed::Fixed(const Fixed& other)
 }
 
 
-// Tu ajoute une fonctionnalit qui depend du proto.  des que tu va donner ces param a ton operateur il va comprendre qu il doit switcher sur ce comportement.
-
-// pour un a = b
-// this = a
-// b = other 
-Fixed& Fixed::operator=(const Fixed& other) // renvoit l adresse vers un objet fixe et prend adresse const d un objet fixed
+// representation reelle =  a.operator=(b)
+// donc le this est pour a qui appel sa fonction membre avec en param b. 
+Fixed& Fixed::operator=(const Fixed& other)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	if (this != &other) // this = tout l objet  (pointeur vers tout l objet courrant)
+	if (this != &other)
 		this->value = other.getRawBits();
-	return *this; // *this = reference de l objet (stock l adresse de l objet)  (pas comme  *ptr qui accede a la valeur)  , fallait un return
+	// std::cout << this << std::endl;  ==> prouve que adreese. autre aurait print valeure 
+	return *this; // *this = reference de l objet (stock l adresse de l objet)
 } // renvoit la reference de a a a lui meme
+// pour que a s affete lui meme pour qu il s attribue la valeur. sinon indefini.
+
+
 // permet a = b = c , car specifi que chacun reste bien qui il est.
 
 // si on return rien alors b = c se fait en premier 
@@ -64,7 +62,11 @@ Fixed& Fixed::operator=(const Fixed& other) // renvoit l adresse vers un objet f
 // a = void
 // c = c. pb.
 
+
+
 Fixed::~Fixed()
 {
 	std::cout << "Destructor called" << std::endl;
 }
+
+

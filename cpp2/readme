@@ -1,3 +1,59 @@
+&  = vraiment un alias pour l objet pas un ptr (qui est independant lui)
+pas une copie.
+
+
+surcharge = redonner de propriete aux operateur.
+
+
+
+
+
+
+Classe privee et publique : 
+	Pour se premunir des erreur possible ( avoir des setter specifique qu on sait robuste pour 
+		le code en question)
+		
+	specifier aux autres dev et user comment une ft doit etre use.
+
+
+
+
+
+Source : https://www.youtube.com/watch?v=PZRI1IfStY0
+
+	https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html
+	
+	
+	===> best perf : https://stackoverflow.com/questions/67225433/how-to-decide-when-to-use-fixed-point-arithmetic-over-float floating processing unit
+
+
+	=>  fraction lineaire : https://www.youtube.com/watch?v=i1phJl-0v54 
+	
+	
+	
+
+
+
+Les nombres float sont pas accurate
+
+
+notation scientifique pratique pour les pc et les gros calcul scientfique.
+
+
+Pas precis pour pc.  nous on calcul facilement 1/3 * 3 = 1
+les pc voit 0.333 0.333 0.333 etc. ils ont plus de place pour rpz le chiffre + on pas la capacite
+d agence les tiers  = erreur d arrondie.
+
+
+
+
+La fraction n a pas d equivalent exact en BASE 2
+
+
+
+
+
+
 
 
 
@@ -24,6 +80,17 @@ Float : (notation scientifique binaire)
 
 
 
+====> floating car la virgule est flottante
+
+
+
+tu peux faire pleins de calcul different et la virugle ira a des endroit diff selon.
+
+
+
+
+
+
 
 Fixed : plus precis mais moins grand.
 
@@ -35,3 +102,17 @@ Fixed : plus precis mais moins grand.
 
 	La précision est toujours la même :
 👉 1 / 256 ≈ 0.0039
+
+
+
+===> on dit la virgule sera toujours au meme endroit
+
+
+
+123 = 1.23
+
+500000 = 5000.00
+
+
+
+==> tu est limite tu calcul que apres tel virgule

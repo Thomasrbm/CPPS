@@ -21,28 +21,34 @@ public:
 	Fixed(const int const_int);
 	Fixed(const float const_float);
 	Fixed(const Fixed& other);
-	bool operator>(const Fixed& other);
-	bool operator<(const Fixed& other);
-	bool operator>=(const Fixed& other);
-	bool operator<=(const Fixed& other);
-	bool operator==(const Fixed& other);
-	bool operator!=(const Fixed& other);
+
+	bool operator>(const Fixed& other) const;
+	bool operator<(const Fixed& other) const;
+	bool operator>=(const Fixed& other) const;
+	bool operator<=(const Fixed& other) const;
+	bool operator==(const Fixed& other) const;
+	bool operator!=(const Fixed& other) const;
+
 	Fixed operator+(const Fixed& other);
 	Fixed operator-(const Fixed& other);
 	Fixed operator*(const Fixed& other);
 	Fixed operator/(const Fixed& other);
+
 	Fixed& operator++(void);
 	Fixed& operator--(void);
 	Fixed operator++(int);
 	Fixed operator--(int);
+
 	~Fixed();
+
 	int getRawBits( void ) const;
 	void setRawBits( int const raw );
 	float toFloat( void ) const;
 	int toInt( void ) const;
 	Fixed& operator=(const Fixed& other);
-	static Fixed& min(Fixed& a, Fixed& b);  // static ft = comme var static : pas besoin d objet pour l appeler, est appeler Fixed::min meme dans le main. Pas d acces aux var privees (pas de this) 
-	static const Fixed& min(const Fixed& a, const Fixed& b);
+
+	static Fixed& min(Fixed& a, Fixed& b);  // static ft = comme var static : pas besoin d objet pour l appeler. n apparetien pas a un objet .  elle est appeler Fixed::min meme dans le main. Pas d acces aux var privees (pas de this) 
+	static const Fixed& min(const Fixed& a, const Fixed& b); // https://cpp.developpez.com/faq/cpp/?page=Les-donnees-et-fonctions-membres-statiques#Quelle-est-la-particularite-d-une-fonction-membre-static
 	static Fixed& max(Fixed& a, Fixed& b);
 	static const Fixed& max(const Fixed& a, const Fixed& b);
 
